@@ -38,6 +38,13 @@ class Auth extends CI_Controller
 			redirect('Auth','refresh');
 		}
 	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		$this->session->set_flashdata('toast', 'success:Terima kasih');
+		redirect('Auth','refresh');
+	}
 }
 
 /* End of file Auth.php */
